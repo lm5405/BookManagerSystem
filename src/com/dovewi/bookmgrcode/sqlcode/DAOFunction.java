@@ -39,8 +39,8 @@ public class DAOFunction {
 		int tmp=1;
 		String sql="";//本函数要执行的查询语句，等待完善
 		try{
-			Connection con=ConnectDatabase();
-			state=con.createStatement();
+			conne=ConnectDatabase();
+			state=conne.createStatement();
 			tmp=state.executeUpdate(sql);
 		}catch(SQLException e){
 			System.out.println("出现错误："+e.getMessage());
@@ -58,8 +58,8 @@ public class DAOFunction {
 		ResultSet tmp=null;
 		String sql="";//本函数要执行的查询语句，等待完善
 		try{
-			Connection con=ConnectDatabase();
-			state=con.createStatement();
+			conne=ConnectDatabase();
+			state=conne.createStatement();
 			tmp=state.executeQuery(sql);
 		}catch(SQLException e){
 			System.out.println("出现错误："+e.getMessage());
@@ -72,8 +72,8 @@ public class DAOFunction {
 		ResultSet tmp=null;
 		String sql="";//本函数要执行的查询语句，等待完善
 		try{
-			Connection con=ConnectDatabase();
-			state=con.createStatement();
+			conne=ConnectDatabase();
+			state=conne.createStatement();
 			tmp=state.executeQuery(sql);
 		}catch(SQLException e){
 			System.out.println("出现错误："+e.getMessage());
