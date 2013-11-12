@@ -1,10 +1,10 @@
 需要用到的表：
-学生
-管理员
-图书
-借阅
+学生(bm_stu)
+管理员(bm_admin)
+图书(bm_book)
+借阅(bm_lend)
 
-学生有的属性：学号(借阅证号),姓名，性别，最大借书量，已借图书量，违约次数，联系方式，备注
-管理员的属性：账号，密码，个人信息
-图书的属性：ISBN，书名，作者，图书标价，在馆数量，总共数量，图书简介
-借书表的属性：ISBN，借阅者学号，借书日期，应归还日期
+学生有的属性：学号(借阅证号)(readernum),姓名(readername)，性别(readersex)，最大借书量(maxlend)，已借图书量(borrownum)，违约次数(renegue)，联系方式(readerphone)，备注(other)
+管理员的属性：管理员编号(adminnum)，账号(adminname)，密码(adminpasswd)，个人信息(information)
+图书的属性：ISBN(ISBNnumber)，书名(bookname)，作者(author)，图书标价(price)，在馆数量(amount)，总共数量(sum)，图书简介(bookinformation)
+借书表的属性：ISBN(ISBNnumber)，借阅者学号(readername)，借书日期(lendtime)，应归还日期(shouldreturntime)，实际归还日期(backtime),罚款(pay)
