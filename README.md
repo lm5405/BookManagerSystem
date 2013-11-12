@@ -15,8 +15,9 @@ BookManagerSystem
 
 项目地址：https://github.com/dovewi/BookManagerSystem
 
-如何使用git：ubuntu系统下，按着git-core，下载repo脚本，然后在工作文件夹repo init -u git://github.com/dovewi/BookManagerSystem.git
+如何使用git：ubuntu系统下，sudo apt-get install git-core,具体使用方法请百度
 不会使用的可以直接点击项目旁边的加号添加代码
+如何使用git：windows下安装git或者使用github for windows，推荐使用后者。本小组成员请尽快安装github for windows并完成配置
 
 by dovewi
 2013.11.7
