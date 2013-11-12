@@ -12,7 +12,7 @@ import java.sql.*;
 public class DAOFunction {
 	//此类正常工作需要mysql驱动，请到mysql官方下载
 	private Connection conne;
-	private Statement State;
+	private Statement state;
 	
 	public static Connection ConnectDatabase(){
 		//TODO 获取数据库连接对象
@@ -21,7 +21,7 @@ public class DAOFunction {
 		try {
 			Class.forName("java.mysql.jdbc.Driver");
 			conTemp = DriverManager.getConnection(
-					"jdbc:mysql://db4free.net:3306/dovewicontacts", "dovewi",
+					"jdbc:mysql://db4free.net:3306", "dovewi",
 					"mytestserver");
 		} catch (Exception e) {
 			System.out.println("数据库连接失败" + e.getMessage());
@@ -32,6 +32,10 @@ public class DAOFunction {
 	//添加图书函数
 	public static ResultSet AddBook(,){
 		//TODO 添加图书到数据库的函数
+		String sql="";//本函数要执行的查询语句，等待完善
+		Connection con=ConnectDatabase();
+		state=con.createStatement();
+		ResultSet tmp=state.excuteUpdate(sql);
 	}
 	
 	//图书损坏后删除图书的函数
@@ -44,7 +48,7 @@ public class DAOFunction {
 	}
 	
 	public static ResultSet SelectBook(,,){
-		//TODO 查询图书信息,编写重载
+		//TODO 查询图书信息,可以增加重载
 	}
 	
 	public static ResultSet LendBooks(){
