@@ -26,7 +26,7 @@ public class DAOFunction {
 		try {
 			Class.forName("java.mysql.jdbc.Driver");
 			conTemp = DriverManager.getConnection(
-					"jdbc:mysql://db4free.net:3306", "dovewi",
+					"jdbc:mysql://db4free.net:3306/dovewibmg", "iidove",
 					"mytestserver");
 		} catch (Exception e) {
 			System.out.println("数据库连接失败" + e.getMessage());
@@ -37,7 +37,7 @@ public class DAOFunction {
 	//添加图书函数
 	public static int AddBook(String bkName){
 		int tmp=1;
-		String sql="";//本函数要执行的查询语句，等待完善
+		String sql="";
 		try{
 			conne=ConnectDatabase();
 			state=conne.createStatement();
@@ -53,10 +53,10 @@ public class DAOFunction {
 		//TODO 编写图书删除函数
 	}*/
 
+	
 	public static ResultSet ListBook(){
-		//TODO 查看图书列表
 		ResultSet tmp=null;
-		String sql="";//本函数要执行的查询语句，等待完善
+		String sql="select * from bm_book where 1";
 		try{
 			conne=ConnectDatabase();
 			state=conne.createStatement();
@@ -67,10 +67,11 @@ public class DAOFunction {
 		return tmp;//返回结果集给业务逻辑处理
 	}
 
+	
+	
 	public static ResultSet SelectBook(String bookISBN,String bookName,String bookAuthor){
-		//TODO 查询图书信息,可以增加重载
 		ResultSet tmp=null;
-		String sql="";//本函数要执行的查询语句，等待完善
+		String sql="select * from bm_book where bookname="+bookName+"or isbnnumber="+bookISBN+"or author="+bookAuthor;
 		try{
 			conne=ConnectDatabase();
 			state=conne.createStatement();
@@ -81,6 +82,8 @@ public class DAOFunction {
 		return tmp;
 	}
 
+	
+	
 	public static ResultSet LendBooks(String bookISBN,String stuNumber){
 		return null;
 		//TODO 参数直接填书号，为了便于移植修改，本项目数据库不设立触发器，借书等修改需要同步各表的操作

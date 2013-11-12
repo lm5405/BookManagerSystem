@@ -6,5 +6,5 @@
 
 学生有的属性：学号(借阅证号)(readernum),姓名(readername)，性别(readersex)，最大借书量(maxlend)，已借图书量(borrownum)，违约次数(renegue)，联系方式(readerphone)，备注(other)
 管理员的属性：管理员编号(adminnum)，账号(adminname)，密码(adminpasswd)，个人信息(information)
-图书的属性：ISBN(ISBNnumber)，书名(bookname)，作者(author)，图书标价(price)，在馆数量(amount)，总共数量(sum)，图书简介(bookinformation)
+图书的属性：ISBN(ISBNnumber)，书名(bookname)，作者(author)，图书标价(price)，在馆数量(amount)，总共数量(sum)，图书简介(bookinfo)
 借书表的属性：ISBN(ISBNnumber)，借阅者学号(readername)，借书日期(lendtime)，应归还日期(shouldreturntime)，实际归还日期(backtime),罚款(pay)
