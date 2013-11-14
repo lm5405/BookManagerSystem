@@ -2,8 +2,9 @@ package com.dovewi.bookmgrcode.sqlcode;
 /*
  * 本类实现数据库读写操作等必须函数
  * 数据库托管在db4free
- * 数据库用户名：
- * 数据库密码：
+ * 数据库用户名：iidove
+ * 数据库密码：mytestserver
+ * 请勿随意更改数据库密码和数据
  * add by dovewi
 */
 /*本项目需要用到的表：
@@ -15,27 +16,25 @@ package com.dovewi.bookmgrcode.sqlcode;
 import java.sql.*;
 
 public class DAOFunction {
-	//此类正常工作需要mysql驱动，请到mysql官方下载
 	private static Connection conne;
 	private static Statement state;
 
 	public static Connection ConnectDatabase(){
-		//TODO 获取数据库连接对象
-		//TODO 以下使用的测试服务器为上次通讯录管理系统的数据库服务器，将会修改
-		Connection conTemp = null;
-		try {
-			Class.forName("java.mysql.jdbc.Driver");
-			conTemp = DriverManager.getConnection(
-					"jdbc:mysql://db4free.net:3306/dovewibmg", "iidove",
-					"mytestserver");
-		} catch (Exception e) {
-			System.out.println("数据库连接失败" + e.getMessage());
-		}
-		return conTemp;
+		Connection con = null;  //创建用于连接数据库的Connection对象  
+        try {  
+            Class.forName("com.mysql.jdbc.Driver");// 加载Mysql数据驱动  
+              
+            con = DriverManager.getConnection(  
+                    "jdbc:mysql://db4free.net:3306/dovewibmg", "iidove", "mytestserver");// 创建数据连接  
+            System.out.println("数据库连接成功");              
+        } catch (Exception e) {  
+            System.out.println("数据库连接失败" + e.getMessage());  
+        }  
+        return con;
 	}
 
 	//添加图书函数
-	public static int AddBook(String bkName){
+	public static int AddBook(){
 		int tmp=1;
 		String sql="";
 		try{
@@ -53,7 +52,6 @@ public class DAOFunction {
 		//TODO 编写图书删除函数
 	}*/
 
-	
 	public static ResultSet ListBook(){
 		ResultSet tmp=null;
 		String sql="select * from bm_book where 1";
@@ -92,11 +90,11 @@ public class DAOFunction {
 
 	public static ResultSet ReturnBooks(String bookISBN,String stuNumber){
 		return null;
-		//TODO 还书函数，直接填写书号
+		//TODO 还书函数，直接填写书号和学号,需要检查学生是否借了这本书,还书成功数据库书的在馆量加一,学生借书表减少相应条目,如果时间违约则学生表违约次数加一
 	}
 	
 	
-	//以下代码用于处理表，为上面增加项目，删除项目，修改项目处理提供辅助
+	//以下代码用于处理表，为上面增加项目，删除项目，修改项目处理提供辅助,可对应表编写重载
 	private static int AddItem(){
 		return 0;
 	}
