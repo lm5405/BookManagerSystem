@@ -32,6 +32,4 @@ public class Reader {
 		this.rPhone=rPhone;
 		this.rOther=rOther;
 	}
-	
-	
 }
