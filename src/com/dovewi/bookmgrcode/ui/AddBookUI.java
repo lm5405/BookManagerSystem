@@ -1,9 +1,25 @@
 package com.dovewi.bookmgrcode.ui;
-
-import java.awt.*;
+/*
+ * @图书入库标签ui布局
+ * 
+ * @两个按钮的事件侦听在com.dovewi.bookmgrcode.servicelogic包中
+ * 
+ * @by dovewi
+ * 
+ * @2013.11.16
+ */
 import javax.swing.*;
+import com.dovewi.bookmgrcode.servicelogic.ActionManager;
 
 public class AddBookUI extends JPanel {
+	//需要ActionManager能够访问这些字段取得值
+	public static JTextField tf_bookName;
+	public static JTextField tf_bookISBN;
+	public static JTextField tf_bookAuthor;
+	public static JTextField tf_bookPrice;
+	public static JTextField tf_bookSum;
+	public static JTextArea ta_bookInfo;
+	//构造界面
 	AddBookUI(){
 		//标签
 		JLabel label_bookName=new JLabel("书名");
@@ -51,11 +67,12 @@ public class AddBookUI extends JPanel {
 		tf_bookSum.setBounds(40,420,271,30);
 		this.add(jspl);
 		jspl.setBounds(340,70,400,380);//添加的滚动条面板
-		
 		//添加两个按钮,侦听器设置到业务逻辑处理
 		this.add(bt_commit);
 		bt_commit.setBounds(530,470,100,25);
+		bt_commit.addActionListener(new ActionManager());
 		this.add(bt_clear);
 		bt_clear.setBounds(640,470,100,25);
+		bt_clear.addActionListener(new ActionManager());
 	}
 }
