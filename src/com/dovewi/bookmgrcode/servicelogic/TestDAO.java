@@ -11,7 +11,6 @@ public class TestDAO {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Connection con=DAOFunction.ConnectDatabase();//已测试可成功连接
-		
 	}
 
 }

@@ -17,7 +17,7 @@ public class LoginForm {
 	public static void main(String[] args) {
 		final String userName = "abc";
 		final String passwrod = "123";
-		JFrame jFrame = new JFrame("Administrator Login");
+		final JFrame jFrame = new JFrame("Administrator Login");
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		jFrame.setBounds(((int)dimension.getWidth() - 200) / 2, ((int)dimension.getHeight() - 300) / 2, 200, 150);
 		jFrame.setResizable(false);
@@ -48,6 +48,7 @@ public class LoginForm {
 			public void actionPerformed(ActionEvent e) {
 				if(userName.equals(text1.getText()) && passwrod.equals(String.valueOf(text2.getPassword()))) {
 					JOptionPane.showMessageDialog(null, "Login Success", "Tip", JOptionPane.INFORMATION_MESSAGE);
+					jFrame.setVisible(false);
 					new MainForm();
 				} else {
 					JOptionPane.showMessageDialog(null, "Login Error", "Tip", JOptionPane.ERROR_MESSAGE);

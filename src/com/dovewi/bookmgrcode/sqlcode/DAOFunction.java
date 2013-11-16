@@ -14,6 +14,7 @@ package com.dovewi.bookmgrcode.sqlcode;
  * 管理员表
 */
 import java.sql.*;
+import com.dovewi.bookmgrcode.servicelogic.*;
 
 public class DAOFunction {
 	private static Connection conne;
@@ -34,7 +35,7 @@ public class DAOFunction {
 	}
 
 	//添加图书函数
-	public static int AddBook(){
+	public static int AddBook(Book bk){
 		int tmp=1;
 		String sql="";
 		try{

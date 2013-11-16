@@ -32,4 +32,7 @@ public class Reader {
 		this.rPhone=rPhone;
 		this.rOther=rOther;
 	}
+	
+	//准备编写一堆set和get之类的函数用来修改对象数据
+	//可修改的只有borrow,phone,other
 }
