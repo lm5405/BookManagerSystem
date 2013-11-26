@@ -21,6 +21,7 @@ public class MainForm extends JFrame {
 		super("图书管理系统");
 		setSize(800,600);
 		setVisible(true);
+		setResizable(false);
 		JTabbedPane MJTP=new JTabbedPane();
 		MJTP.addTab("借书", new LendBookPanelUI());
 		MJTP.addTab("还书",new ReturnBookUI());
