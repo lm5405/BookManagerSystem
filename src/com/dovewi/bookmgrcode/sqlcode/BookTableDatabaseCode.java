@@ -19,8 +19,8 @@ public class BookTableDatabaseCode {
 			stat.setString(2, bk.getBookName());
 			stat.setString(3, bk.getBookAuthor());
 			stat.setString(4, bk.getBookPrice());
-			stat.setInt(5, bk.getBookAmount());
-			stat.setInt(6, bk.getBookSum());
+			stat.setString(5, bk.getBookAmount());
+			stat.setString(6, bk.getBookSum());
 			stat.setString(7, bk.getBookInfo());
 			flag = stat.executeUpdate();
 			stat.close();

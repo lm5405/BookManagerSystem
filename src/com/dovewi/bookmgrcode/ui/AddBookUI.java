@@ -13,12 +13,14 @@ import com.dovewi.bookmgrcode.servicelogic.ActionManager;
 
 public class AddBookUI extends JPanel {
 	//需要ActionManager能够访问这些字段取得值
-	public static JTextField tf_bookName;
-	public static JTextField tf_bookISBN;
-	public static JTextField tf_bookAuthor;
-	public static JTextField tf_bookPrice;
-	public static JTextField tf_bookSum;
-	public static JTextArea ta_bookInfo;
+	public static JTextField tf_bookName=new JTextField(40);
+	public static JTextField tf_bookISBN=new JTextField(15);
+	public static JTextField tf_bookAuthor=new JTextField(30);
+	public static JTextField tf_bookPrice=new JTextField(5);
+	public static JTextField tf_bookSum=new JTextField(6);
+	public static JTextArea ta_bookInfo=new JTextArea();
+	public static JButton bt_commit;
+	public static JButton bt_clear;
 	//构造界面
 	AddBookUI(){
 		//标签
@@ -28,18 +30,11 @@ public class AddBookUI extends JPanel {
 		JLabel label_bookPrice=new JLabel("标价");
 		JLabel label_bookSum=new JLabel("数量");
 		JLabel label_bookInfo=new JLabel("图书简介");
-		//文本框和文本区域
-		JTextField tf_bookName=new JTextField(40);
-		JTextField tf_bookISBN=new JTextField(15);
-		JTextField tf_bookAuthor=new JTextField(30);
-		JTextField tf_bookPrice=new JTextField(5);
-		JTextField tf_bookSum=new JTextField(6);
-		JTextArea ta_bookInfo=new JTextArea();
 		//增加滚动条面板并添加ta_bookinfo
 		JScrollPane jspl=new JScrollPane(ta_bookInfo);
 		//按钮
-		JButton bt_commit=new JButton("提交");
-		JButton bt_clear=new JButton("清空");
+		bt_commit=new JButton("提交");
+		bt_clear=new JButton("清空");
 		//开始构造窗体
 		setLayout(null);
 		this.add(label_bookISBN);

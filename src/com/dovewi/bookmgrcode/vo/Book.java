@@ -5,8 +5,8 @@ public class Book {
 	private String bookName;
 	private String bookAuthor;
 	private String bookPrice;
-	private int bookAmount;
-	private int bookSum;
+	private String bookAmount;
+	private String bookSum;
 	private String bookInfo;
 	public Book(){
 	}
@@ -39,17 +39,17 @@ public class Book {
 		return bookPrice;
 	}
 	
-	public void setBookAmount(int ba){
+	public void setBookAmount(String ba){
 		this.bookAmount=ba;
 	}
-	public int getBookAmount(){
+	public String getBookAmount(){
 		return bookAmount;
 	}
 	
-	public void setBookSum(int bs){
-		this.bookSum=bs;
+	public void setBookSum(String string){
+		this.bookSum=string;
 	}
-	public int getBookSum(){
+	public String getBookSum(){
 		return bookSum;
 	}
 	
