@@ -11,6 +11,7 @@ package com.dovewi.bookmgrcode.ui;
 */
 
 import java.awt.event.*;
+
 import javax.swing.*;
 
 public class MainForm extends JFrame {
@@ -22,8 +23,10 @@ public class MainForm extends JFrame {
 		JTabbedPane MJTP=new JTabbedPane();
 		MJTP.addTab("借书", new LendBookPanelUI());
 		MJTP.addTab("还书",new ReturnBookUI());
-		MJTP.addTab("续借", new RenewUI());
+		//MJTP.addTab("续借", new RenewUI());
 		MJTP.addTab("入库",new AddBookUI());
+		MJTP.addTab("浏览图书", new BrowserUI());
+		MJTP.addTab("读者管理",new ReaderManagerUI());
 		getContentPane().add(MJTP);
 		validate();
 		addWindowListener(new WindowAdapter(){

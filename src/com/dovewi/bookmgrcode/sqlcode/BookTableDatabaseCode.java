@@ -2,6 +2,9 @@ package com.dovewi.bookmgrcode.sqlcode;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.dovewi.bookmgrcode.vo.Book;
 
 public class BookTableDatabaseCode {
@@ -70,5 +73,23 @@ public class BookTableDatabaseCode {
 			return true;
 		else
 			return false;
+	}
+	
+	public static ResultSet queryBook(String item,boolean j){
+		sql="";
+		if (j==true){
+			sql="SELECT * FROM bm_book WHERE isbnnumber=%?%";//选择查询的精确程度
+		}else
+			sql="SELECT * FROM bm_book WHERE isbnnumber=?";
+		ResultSet rs=null;
+		try{
+			con = DatabaseConnection.getMyDatabaseConnection();
+			stat = con.prepareStatement(sql);
+			stat.setString(1, item);
+			rs = stat.executeQuery();
+		}catch(SQLException e){
+			System.out.println("查询出错："+e.getMessage());
+		}
+		return rs;
 	}
 }

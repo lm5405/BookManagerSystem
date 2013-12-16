@@ -80,13 +80,11 @@ public class ReaderTableDatabaseCode {
 	//通用查询
 	public static ResultSet queryReader(String item){
 		ResultSet rs=null;
-		sql="SELECT FROM bm_reader WHERE readername='"+item+"' or readernum='"+item+"' or readerphone='"+item+"';";
+		sql="SELECT * FROM bm_reader WHERE readername='"+item+"' or readernum='"+item+"' or readerphone='"+item+"';";
 		try{
 			con=DatabaseConnection.getMyDatabaseConnection();
 			stat=con.prepareStatement(sql);
 			rs=stat.executeQuery();
-			stat.close();
-			con.close();
 		}catch(Exception e){
 			System.out.println("查询出错"+e.getMessage());
 		}

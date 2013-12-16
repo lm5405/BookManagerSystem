@@ -11,10 +11,19 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 public class LoginForm {
 
 	public static void main(String[] args) {
+		try
+		{
+			JFrame.setDefaultLookAndFeelDecorated(true);
+			UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
+		} catch (Exception e)
+		{
+			System.out.println("界面风格挂了："+e.getMessage());
+		}
 		final String userName = "abc";
 		final String passwrod = "123";
 		final JFrame jFrame = new JFrame("Administrator Login");
@@ -39,7 +48,6 @@ public class LoginForm {
 		final JPasswordField text2 = new JPasswordField();
 		text2.setBounds(50, 45, 130, 20);
 		jFrame.add(text2);
-
 		JButton button = new JButton("Login");
 		button.setBounds(10, 75, 170, 40);
 		button.addActionListener(new ActionListener() {

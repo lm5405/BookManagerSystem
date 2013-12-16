@@ -38,17 +38,17 @@ public class AddBookUI extends JPanel {
 		//开始构造窗体
 		setLayout(null);
 		this.add(label_bookISBN);
-		label_bookISBN.setBounds(40, 40, 30, 16);
+		label_bookISBN.setBounds(40, 40, 60, 16);
 		this.add(label_bookName);
-		label_bookName.setBounds(40,130,30,16);
+		label_bookName.setBounds(40,130,60,16);
 		this.add(label_bookAuthor);
-		label_bookAuthor.setBounds(40,223,30,16);
+		label_bookAuthor.setBounds(40,223,60,16);
 		this.add(label_bookPrice);
-		label_bookPrice.setBounds(40,314,30,16);
+		label_bookPrice.setBounds(40,314,60,16);
 		this.add(label_bookSum);
-		label_bookSum.setBounds(40,394,30,16);
+		label_bookSum.setBounds(40,394,60,16);
 		this.add(label_bookInfo);
-		label_bookInfo.setBounds(340,40,80,16);
+		label_bookInfo.setBounds(340,40,60,16);
 		//添加文本框到窗体
 		this.add(tf_bookISBN);
 		tf_bookISBN.setBounds(40, 70, 271, 30);

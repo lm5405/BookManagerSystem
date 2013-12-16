@@ -2,13 +2,15 @@ package com.dovewi.bookmgrcode.ui;
 
 import javax.swing.*;
 
+import com.dovewi.bookmgrcode.servicelogic.ActionManager;
+
 public class ReturnBookUI extends JPanel {
 	public static JButton btnTrue;
 	public static JButton btnClear;
 	public static JButton btnGet;
 	public static JTextField tfReaderNum;
 	public static JTextField tfBookNum;
-	public JTextArea taBookList;
+	public static JTextArea taBookList;
 	
 	public ReturnBookUI(){
 		JLabel label1=new JLabel("借书证号");
@@ -37,8 +39,11 @@ public class ReturnBookUI extends JPanel {
 		add(btnClear);
 		add(btnGet);
 		btnGet.setBounds(30,480,100,25);
+		btnGet.addActionListener(new ActionManager());
 		btnClear.setBounds(160,480,100,25);
+		btnClear.addActionListener(new ActionManager());
 		btnTrue.setBounds(270,480,100,25);
+		btnClear.addActionListener(new ActionManager());
 		
 		//文本框
 		add(tfReaderNum);

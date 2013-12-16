@@ -2,6 +2,8 @@ package com.dovewi.bookmgrcode.sqlcode;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import com.dovewi.bookmgrcode.vo.LendBook;
 
 public class LendTableDatabaseCode {
@@ -67,5 +69,19 @@ public class LendTableDatabaseCode {
 			return true;
 		else
 			return false;
+	}
+	
+	public static ResultSet queryBook(String item){
+		ResultSet rs=null;
+		sql="SELECT * FROM bm_lend WHERE readernum=?";
+		try {
+			con = DatabaseConnection.getMyDatabaseConnection();
+			stat = con.prepareStatement(sql);
+			stat.setString(1, item);
+			rs = stat.executeQuery();
+		} catch (Exception e) {
+			System.out.println("¸üÐÂ³ö´í" + e.getMessage());
+		}
+		return rs;
 	}
 }
