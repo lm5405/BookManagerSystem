@@ -66,7 +66,6 @@ public class LoginForm {
 			}
 		});
 		jFrame.add(button);
-
 		jFrame.setVisible(true);
 	}
 

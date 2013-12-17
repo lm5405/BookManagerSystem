@@ -92,4 +92,18 @@ public class BookTableDatabaseCode {
 		}
 		return rs;
 	}
+	
+	//查询全部图书
+	public static ResultSet queryAllBook(){
+		sql="SELECT * FROM bm_book;";
+		ResultSet rs=null;
+		try{
+			con = DatabaseConnection.getMyDatabaseConnection();
+			stat = con.prepareStatement(sql);
+			rs = stat.executeQuery();
+		}catch(SQLException e){
+			System.out.println("查询出错："+e.getMessage());
+		}
+		return rs;
+	}
 }

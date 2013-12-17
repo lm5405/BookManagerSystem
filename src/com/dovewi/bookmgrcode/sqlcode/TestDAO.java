@@ -1,5 +1,6 @@
 package com.dovewi.bookmgrcode.sqlcode;
 
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,12 +38,15 @@ public class TestDAO {
 			System.out.println("删除失败-主函数");*/
 		
 		//修改测试
-		/*boolean flag=ReaderTableDatabaseCode.updateReader("1108060204", "readername", "中国移动");
+		/*boolean flag=ReaderTableDatabaseCode.updateReader("1108060204", "borrownum", "1");
 		if (flag==true)
 			System.out.println("修改成功-主函数");
 		else
 			System.out.println("修改失败-主函数");*/
-		
+		ResultSet rs=BookTableDatabaseCode.queryAllBook();
+		while(rs.next()){
+			System.out.println(rs.getString("isbnnumber")+rs.getString("bookname"));
+		}
 		
 		
 		//图书类的测试

@@ -43,7 +43,7 @@ public class ReturnBookUI extends JPanel {
 		btnClear.setBounds(160,480,100,25);
 		btnClear.addActionListener(new ActionManager());
 		btnTrue.setBounds(270,480,100,25);
-		btnClear.addActionListener(new ActionManager());
+		btnTrue.addActionListener(new ActionManager());
 		
 		//нд╠╬©Р
 		add(tfReaderNum);
